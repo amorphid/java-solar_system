@@ -30,12 +30,12 @@ public class SolarSystem {
     public void printPlanetNamesSortedById() {
         System.out.println("Sorted planets:");
 
-        for (Planet planet : this.sortPlanets()) {
+        for (Planet planet : this.sortPlanetsById()) {
             System.out.println("* " + planet.name);
         }
     }
 
-    public ArrayList<Planet> sortPlanets() {
+    public ArrayList<Planet> sortPlanetsById() {
         // preserve original unsorted list by cloning it before sorting
         ArrayList<Planet> planetsClone = new ArrayList<Planet>(this.planets);
 
