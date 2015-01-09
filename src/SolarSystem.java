@@ -41,7 +41,7 @@ public class SolarSystem {
 
         planetsClone.sort(new Comparator<Planet>() {
             public int compare(Planet p1, Planet p2) {
-                if (p1.orbitID > p2.orbitID) {
+                if (p1.orbitId > p2.orbitId) {
                     return 1;
                 } else {
                     return -1;
