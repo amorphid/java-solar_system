@@ -22,19 +22,27 @@ public class SolarSystem {
         this.planets = planets;
     }
 
-    public void printPlanetNamesSortedByID() {
+    public void printPlanetNames() {
         System.out.println("Unsorted planets:");
 
         for (Planet planet : this.planets) {
             System.out.println("* " + planet.name);
         }
+    }
 
-        // preserve original unsorted list by cloning before sorting
-        Planet[] planets = this.planets.clone();
+    public void printPlanetNamesSortedById() {
+        System.out.println("Sorted planets:");
 
-        System.out.println("\nSorted planets:");
+        for (Planet planet : this.sortPlanets()) {
+            System.out.println("* " + planet.name);
+        }
+    }
 
-        Collections.sort(Arrays.asList(planets), new Comparator<Planet>() {
+    public Planet[] sortPlanets() {
+        // preserve original unsorted list by cloning it before sorting
+        Planet[] planetsClone = this.planets.clone();
+
+        Collections.sort(Arrays.asList(planetsClone), new Comparator<Planet>() {
             public int compare(Planet p1, Planet p2) {
                 if (p1.orbitID > p2.orbitID) {
                     return 1;
@@ -44,8 +52,6 @@ public class SolarSystem {
             }
         });
 
-        for (Planet planet : planets) {
-            System.out.println("* " + planet.name);
-        }
+        return planetsClone;
     }
 }
