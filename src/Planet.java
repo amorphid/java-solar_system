@@ -1,15 +1,9 @@
 public class Planet {
-    private String name;
+    public String name;
+    public int orbitID;
 
-    public Planet (String name) {
-        setName(name);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public Planet (String name, int orbitID) {
+        this.name    = name;
+        this.orbitID = orbitID;
     }
 }
