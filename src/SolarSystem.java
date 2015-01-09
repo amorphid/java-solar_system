@@ -1,23 +1,20 @@
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class SolarSystem {
-    private Planet[] planets;
+    private ArrayList<Planet> planets;
 
     public SolarSystem() {
-        Planet[] planets = new Planet[] {
-            new Planet("Mercury", 1),
-            new Planet("Venus", 2),
-            new Planet("Earth", 3),
-            new Planet("Mars", 4),
-            new Planet("Jupiter", 5),
-            new Planet("Saturn", 6),
-            new Planet("Uranus", 7),
-            new Planet("Neptune", 8)
-        };
+        ArrayList<Planet> planets = new ArrayList<Planet>();
+        planets.add(new Planet("Mercury", 1));
+        planets.add(new Planet("Venus", 2));
+        planets.add(new Planet("Earth", 3));
+        planets.add(new Planet("Mars", 4));
+        planets.add(new Planet("Jupiter", 5));
+        planets.add(new Planet("Saturn", 6));
+        planets.add(new Planet("Uranus", 7));
+        planets.add(new Planet("Neptune", 8));
 
-        Collections.shuffle(Arrays.asList(planets));
+        Collections.shuffle(planets);
 
         this.planets = planets;
     }
@@ -38,11 +35,11 @@ public class SolarSystem {
         }
     }
 
-    public Planet[] sortPlanets() {
+    public ArrayList<Planet> sortPlanets() {
         // preserve original unsorted list by cloning it before sorting
-        Planet[] planetsClone = this.planets.clone();
+        ArrayList<Planet> planetsClone = new ArrayList<Planet>(this.planets);
 
-        Collections.sort(Arrays.asList(planetsClone), new Comparator<Planet>() {
+        planetsClone.sort(new Comparator<Planet>() {
             public int compare(Planet p1, Planet p2) {
                 if (p1.orbitID > p2.orbitID) {
                     return 1;

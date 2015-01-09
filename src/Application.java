@@ -4,5 +4,7 @@ public class Application {
         solarSystem.printPlanetNames();
         System.out.println();
         solarSystem.printPlanetNamesSortedById();
+        System.out.println();
+        solarSystem.printPlanetNames();
     }
 }
